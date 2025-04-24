@@ -15,3 +15,4 @@ jobs:
       - run: pnpm install
       - run: pnpm run lint
       - run: pnpm run build
+      - run: pnpm --filter ./packages/docs... build-storybook
