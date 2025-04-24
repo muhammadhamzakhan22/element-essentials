@@ -19,18 +19,18 @@ interface ColorPalette {
 }
 
 const colors: ColorPalette = {
-  primary: '#a3e635',      // lime-400 (text, accent, border)
-  secondary: '#365314',   // lime-950 (background)
-  accent: '#a3e635',      // lime-400
-  background: '#365314',  // lime-950 (button background)
-  surface: '#3f6212',     // lime-900 (hover background)
+  primary: '#a3e635', // lime-400 (text, accent, border)
+  secondary: '#365314', // lime-950 (background)
+  accent: '#a3e635', // lime-400
+  background: '#365314', // lime-950 (button background)
+  surface: '#3f6212', // lime-900 (hover background)
   text: {
-    primary: '#a3e635',   // lime-400
+    primary: '#a3e635', // lime-400
     secondary: '#365314', // lime-950
-    disabled: '#3f6212',  // lime-900
+    disabled: '#3f6212', // lime-900
   },
-  error: '#eb9486',       // error (unchanged)
-  success: '#a3e635',     // lime-400
+  error: '#eb9486', // error (unchanged)
+  success: '#a3e635', // lime-400
 };
 
 // === Typography ===
@@ -86,7 +86,6 @@ const typography: Typography = {
   },
 };
 
-
 // === Spacing ===
 interface Spacing {
   xs: string;
@@ -105,7 +104,6 @@ const spacing: Spacing = {
   xl: '2rem', // 32px
   '2xl': '3rem', // 48px
 };
-
 
 const tokens = {
   color: {

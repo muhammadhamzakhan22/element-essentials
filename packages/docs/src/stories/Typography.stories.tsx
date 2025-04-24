@@ -1,17 +1,40 @@
-import React from "react";
-import { Typography } from "../../../components/src/Typography/Typography";
-import type { Meta, StoryObj } from "@storybook/react";
+import React from 'react';
+import Typography from '../../../components/src/Typography/Typography';
+import type { Meta, StoryObj } from '@storybook/react';
 
-type TypographyVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "subtitle1" | "subtitle2" | "body1" | "body2" | "caption" | "overline";
+type TypographyVariant =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'subtitle1'
+  | 'subtitle2'
+  | 'body1'
+  | 'body2'
+  | 'caption'
+  | 'overline';
 
 const variants: TypographyVariant[] = [
-  "h1", "h2", "h3", "h4", "h5", "h6", "subtitle1", "subtitle2", "body1", "body2", "caption", "overline"
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'subtitle1',
+  'subtitle2',
+  'body1',
+  'body2',
+  'caption',
+  'overline',
 ];
 
 const meta: Meta<typeof Typography> = {
-  title: "Components/Typography",
+  title: 'Components/Typography',
   component: Typography,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
@@ -21,7 +44,11 @@ export const AllVariants: Story = {
   render: () => (
     <div>
       {variants.map((variant) => (
-        <Typography key={variant} variant={variant} style={{ marginBottom: 12 }}>
+        <Typography
+          key={variant}
+          variant={variant}
+          style={{ marginBottom: 12 }}
+        >
           {variant.charAt(0).toUpperCase() + variant.slice(1)} Typography
         </Typography>
       ))}
@@ -31,7 +58,7 @@ export const AllVariants: Story = {
 
 export const Playground: Story = {
   args: {
-    children: "The quick brown fox jumps over the lazy dog.",
-    variant: "body1",
+    children: 'The quick brown fox jumps over the lazy dog.',
+    variant: 'body1',
   },
 };

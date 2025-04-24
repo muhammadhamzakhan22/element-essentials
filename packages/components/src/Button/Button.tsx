@@ -27,7 +27,7 @@ interface ButtonProps {
 //   accent: 'accent',
 // };
 
-export const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   children,
   icon,
@@ -58,3 +58,5 @@ export const Button: React.FC<ButtonProps> = ({
     </motion.button>
   );
 };
+
+export default Button;

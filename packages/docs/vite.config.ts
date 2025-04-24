@@ -20,8 +20,14 @@ export default defineConfig({
   // Ensure the CSS is available for Storybook
   resolve: {
     alias: {
-      '@element-essentials/components': path.resolve(__dirname, '../packages/components/src'),
-      '@element-essentials/tokens': path.resolve(__dirname, '../packages/tokens/dist/tokens'),
+      '@element-essentials/components': path.resolve(
+        __dirname,
+        '../packages/components/src'
+      ),
+      '@element-essentials/tokens': path.resolve(
+        __dirname,
+        '../packages/tokens/dist/tokens'
+      ),
     },
   },
 });
