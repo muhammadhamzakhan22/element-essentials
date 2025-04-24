@@ -1,6 +1,11 @@
 {
   "name": "element-essentials",
   "private": true,
+  "workspaces": [
+    "packages/tokens",
+    "packages/docs",
+    "apps/docs"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -9,6 +14,11 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "eslint": "^9.25.1",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.5.3",
     "turbo": "^2.5.1",
     "typescript": "5.8.2"

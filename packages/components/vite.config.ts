@@ -7,7 +7,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@tokens': path.resolve(__dirname, '../tokens/dist/tokens'),
-      '@element-essentials/tokens': path.resolve(__dirname, '../tokens/dist/tokens'),
+      '@element-essentials/tokens': path.resolve(
+        __dirname,
+        '../tokens/dist/tokens'
+      ),
     },
   },
   css: {
