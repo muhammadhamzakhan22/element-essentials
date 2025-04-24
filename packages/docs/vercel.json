@@ -1,14 +1,4 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "storybook-static"
-      }
-    }
-  ],
   "buildCommand": "pnpm build-storybook",
-  "outputDirectory": "storybook-static",
-  "ignoreCommand": "echo 'storybook-static is a build output and should not block deployment'"
+  "outputDirectory": "storybook-static"
 }
