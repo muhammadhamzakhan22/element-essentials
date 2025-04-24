@@ -9,9 +9,13 @@ import styles from './Button.module.css';
 // Define button variants
 type ButtonVariant = 'primary' | 'secondary' | 'accent';
 
+type ButtonSize = 'sm' | 'md' | 'lg';
+
 interface ButtonProps {
   variant?: ButtonVariant;
   children: React.ReactNode;
+  icon?: React.ReactNode;
+  size?: ButtonSize;
   onClick?: () => void;
   disabled?: boolean;
 }
@@ -26,10 +30,17 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   children,
+  icon,
+  size = 'md',
   onClick,
   disabled = false,
 }) => {
-  const buttonClass = `${styles.button} ${styles[variant]} ${disabled ? styles.disabled : ''}`;
+  const buttonClass = [
+    styles.button,
+    styles[variant],
+    styles[`button--${size}`],
+    disabled ? styles.disabled : '',
+  ].join(' ');
 
   return (
     <motion.button
@@ -42,7 +53,8 @@ export const Button: React.FC<ButtonProps> = ({
       whileHover={!disabled ? { scale: 1.04 } : {}}
       transition={{ type: 'spring', stiffness: 320, damping: 24 }}
     >
-      {children}
+      {icon && <span className={styles.icon}>{icon}</span>}
+      <span className={styles.label}>{children}</span>
     </motion.button>
   );
 };

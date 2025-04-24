@@ -1,8 +1,15 @@
 {
   "name": "@element-essentials/components",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
+    },
+    "./styles.css": "./src/styles.css"
+  },
   "scripts": {
     "prebuild": "cd ../tokens && pnpm run build",
     "build": "tsc && vite build",
@@ -13,15 +20,15 @@
   "dependencies": {
     "@element-essentials/tokens": "workspace:*",
     "framer-motion": "^12.8.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^14.3.1",
     "@types/jest": "^29.5.14",
-    "@types/react": "^18.3.20",
-    "@types/react-dom": "^18.3.6",
+   "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.4",

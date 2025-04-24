@@ -19,18 +19,18 @@ interface ColorPalette {
 }
 
 const colors: ColorPalette = {
-  primary: '#0052cc',
-  secondary: '#6b7280',
-  accent: '#ff6200',
-  background: '#f8fafc',
-  surface: '#ffffff',
+  primary: '#a3e635',      // lime-400 (text, accent, border)
+  secondary: '#365314',   // lime-950 (background)
+  accent: '#a3e635',      // lime-400
+  background: '#365314',  // lime-950 (button background)
+  surface: '#3f6212',     // lime-900 (hover background)
   text: {
-    primary: '#1f2937',
-    secondary: '#6b7280',
-    disabled: '#d1d5db',
+    primary: '#a3e635',   // lime-400
+    secondary: '#365314', // lime-950
+    disabled: '#3f6212',  // lime-900
   },
-  error: '#dc2626',
-  success: '#16a34a',
+  error: '#eb9486',       // error (unchanged)
+  success: '#a3e635',     // lime-400
 };
 
 // === Typography ===
@@ -86,6 +86,7 @@ const typography: Typography = {
   },
 };
 
+
 // === Spacing ===
 interface Spacing {
   xs: string;
@@ -105,8 +106,7 @@ const spacing: Spacing = {
   '2xl': '3rem', // 48px
 };
 
-// === Style Dictionary-Compatible Tokens ===
-// Structure tokens in a format that Style Dictionary can process
+
 const tokens = {
   color: {
     brand: {
@@ -162,12 +162,60 @@ const tokens = {
   },
 };
 
+// === Button Sizes ===
+interface ButtonSize {
+  height: string;
+  fontSize: string;
+  paddingX: string;
+}
+
+const buttonSizes = {
+  sm: {
+    height: '2rem', // 32px
+    fontSize: typography.fontSize.sm, // 0.875rem
+    paddingX: spacing.sm, // 0.5rem
+  },
+  md: {
+    height: '2.5rem', // 40px (current icon button)
+    fontSize: typography.fontSize.base, // 1rem
+    paddingX: spacing.md, // 1rem
+  },
+  lg: {
+    height: '3rem', // 48px
+    fontSize: typography.fontSize.lg, // 1.125rem
+    paddingX: spacing.lg, // 1.5rem
+  },
+};
+
+// === Style Dictionary-Compatible Tokens ===
+// Structure tokens in a format that Style Dictionary can process
+const buttonSizeTokens = {
+  sm: {
+    height: { value: buttonSizes.sm.height },
+    fontSize: { value: buttonSizes.sm.fontSize },
+    paddingX: { value: buttonSizes.sm.paddingX },
+  },
+  md: {
+    height: { value: buttonSizes.md.height },
+    fontSize: { value: buttonSizes.md.fontSize },
+    paddingX: { value: buttonSizes.md.paddingX },
+  },
+  lg: {
+    height: { value: buttonSizes.lg.height },
+    fontSize: { value: buttonSizes.lg.fontSize },
+    paddingX: { value: buttonSizes.lg.paddingX },
+  },
+};
+
 // === Exports ===
 // Export individual token sets for use in components
-export { colors, typography, spacing };
+export { colors, typography, spacing, buttonSizes };
 
 // Export types for type-safe usage
 export type { ColorPalette, Typography, Spacing };
 
 // Export Style Dictionary tokens for processing
-export default tokens;
+export default {
+  ...tokens,
+  buttonSize: buttonSizeTokens,
+};
