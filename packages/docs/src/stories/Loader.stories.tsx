@@ -12,5 +12,9 @@ export default meta;
 type Story = StoryObj<typeof Loader>;
 
 export const Default: Story = {
-  render: () => <Loader />,
+  render: () => (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
+      <Loader />
+    </div>
+  ),
 };
