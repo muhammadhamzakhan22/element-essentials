@@ -4,7 +4,6 @@
 
 import React from 'react';
 import styles from './Button.module.css';
-import { colors, ColorPalette } from '@element-essentials/tokens';
 
 // Define button variants
 type ButtonVariant = 'primary' | 'secondary' | 'accent';
@@ -17,11 +16,11 @@ interface ButtonProps {
 }
 
 // Map variants to colors
-const variantStyles: Record<ButtonVariant, keyof ColorPalette> = {
-  primary: 'primary',
-  secondary: 'secondary',
-  accent: 'accent',
-};
+// const variantStyles: Record<ButtonVariant, keyof ColorPalette> = {
+//   primary: 'primary',
+//   secondary: 'secondary',
+//   accent: 'accent',
+// };
 
 export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',

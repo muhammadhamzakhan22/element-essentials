@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Button } from './Button';
 import '@testing-library/jest-dom';
+import React from 'react';
 
 describe('Button', () => {
   it('renders with primary variant', () => {
