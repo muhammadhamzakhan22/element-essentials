@@ -1,59 +1,88 @@
-# Turborepo starter
+# Element Essentials
 
-This Turborepo starter is maintained by the Turborepo core team.
+**A lightweight, accessible component library providing essential UI building blocks for modern web applications.**
 
-## Using this example
+---
 
-Run the following command:
+## Overview
+Element Essentials is a modern, accessible React component library designed to help you build beautiful, consistent, and user-friendly interfaces with ease. It provides a set of essential UI components, tokens, and documentation for rapid web application development.
 
+---
+
+## Tech Stack
+- **React 19**
+- **TypeScript**
+- **Vite** (for docs dev/build)
+- **Storybook** (for interactive component documentation)
+- **pnpm** (monorepo/workspaces)
+- **Turborepo** (monorepo build orchestration and caching)
+- **ESLint & Prettier** (code quality)
+
+### Monorepo Management with Turborepo
+This project uses [Turborepo](https://turbo.build/) to efficiently manage builds, caching, and task orchestration across multiple packages. Turborepo helps speed up development and CI by running only the necessary tasks and sharing cache artifacts between machines.
+
+**Common Turborepo commands:**
 ```sh
-npx create-turbo@latest
+pnpm turbo run build      # Build all packages
+pnpm turbo run dev        # Start dev servers for all packages
+pnpm turbo run lint       # Lint all packages
+```
+Learn more in the [Turborepo docs](https://turbo.build/repo/docs).
+
+---
+
+## Project Structure
+```
+/element-essentials
+├── packages
+│   ├── components   # React component library source code
+│   ├── tokens       # Design tokens (colors, typography, spacing, etc.)
+│   └── docs         # Documentation site (Vite + Storybook)
+└── ...              # Configs, CI, etc.
 ```
 
-## What's inside?
+- **components**: All reusable UI components live here.
+- **tokens**: Centralized design tokens for consistency.
+- **docs**: Storybook-powered documentation and usage guides.
 
-This Turborepo includes the following packages/apps:
+---
 
-### Apps and Packages
+## Getting Started
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+### Install dependencies
+```sh
+pnpm install
 ```
 
 ### Develop
-
-To develop all apps and packages, run the following command:
-
+Start the docs site and Storybook in development mode:
+```sh
+cd packages/docs
+pnpm dev         # Starts Vite dev server for docs
+pnpm storybook   # Starts Storybook for live component preview
 ```
-cd my-turborepo
-pnpm dev
+
+### Build
+Build the component library and docs:
+```sh
+pnpm build       # Build all packages
+cd packages/docs
+pnpm build-storybook   # Build static Storybook docs
 ```
 
-### Remote Caching
+### View Storybook
+After building, open `packages/docs/storybook-static/index.html` in your browser or deploy to a static host (e.g., Vercel).
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+---
+
+## Contributing
+- Please open issues or pull requests for bugs, features, or improvements.
+- Follow the coding standards enforced by ESLint and Prettier.
+
+---
+
+## License
+MIT
 
 Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
 
