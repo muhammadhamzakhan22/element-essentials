@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import styles from './Button.module.css';
 
 // Define button variants
@@ -31,13 +32,17 @@ export const Button: React.FC<ButtonProps> = ({
   const buttonClass = `${styles.button} ${styles[variant]} ${disabled ? styles.disabled : ''}`;
 
   return (
-    <button
+    <motion.button
       className={buttonClass}
       onClick={onClick}
       disabled={disabled}
       type="button"
+      initial={{ scale: 0.96, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      whileHover={!disabled ? { scale: 1.04 } : {}}
+      transition={{ type: 'spring', stiffness: 320, damping: 24 }}
     >
       {children}
-    </button>
+    </motion.button>
   );
 };
