@@ -1,6 +1,7 @@
 {
-  "extends": "@element-essentials/typescript-config/react-library.json",
+  "extends": "../typescript-config/react-library.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "outDir": "dist",
     "typeRoots": ["./node_modules/@types"]
   },

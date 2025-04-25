@@ -1,6 +1,5 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Typography } from './Typography';
+import Typography from './Typography';
 
 describe('Typography', () => {
   it('renders the correct variant element', () => {

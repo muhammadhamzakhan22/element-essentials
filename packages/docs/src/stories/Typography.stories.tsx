@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '../../../components/src/Typography/Typography';
+import { Typography } from '@element-essentials/components';
 import type { Meta, StoryObj } from '@storybook/react';
 
 type TypographyVariant =

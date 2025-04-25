@@ -1,11 +1,9 @@
 import { type JSX } from 'react';
 
-export function Code({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
+type CodeProps = {
   className?: string;
-}): JSX.Element {
+} & React.PropsWithChildren<{}>;
+
+export function Code({ children, className }: CodeProps): JSX.Element {
   return <code className={className}>{children}</code>;
 }

@@ -1,6 +1,8 @@
 {
   "extends": "@element-essentials/typescript-config/nextjs.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
     "plugins": [
       {
         "name": "next"

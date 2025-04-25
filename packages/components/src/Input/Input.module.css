@@ -1,0 +1,26 @@
+.ee-messageBox {
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ee-bg, #365314);
+  padding: 0 15px;
+  border-radius: 10px;
+  border: 1px solid var(--ee-border, #3f6212);
+}
+.ee-messageBox:focus-within {
+  border: 1px solid var(--ee-border-focus, #a3e635);
+}
+
+.ee-messageInput {
+  width: 200px;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  color: var(--ee-text, #a3e635);
+  font-family: var(--ee-font, "Inter", -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: var(--ee-font-size, 1rem);
+}

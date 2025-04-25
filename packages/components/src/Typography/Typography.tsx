@@ -58,7 +58,9 @@ const Typography: React.FC<TypographyProps> = ({
     'p',
     'span',
   ];
-  const Component = component || variantToElement[variant] || 'span';
+  const Component = (component ||
+    variantToElement[variant] ||
+    'span') as keyof JSX.IntrinsicElements;
 
   // Runtime warning for non-allowed tags
   if (component && !allowedTags.includes(component)) {
@@ -70,10 +72,13 @@ const Typography: React.FC<TypographyProps> = ({
     }
   }
 
-  return (
-    <Component className={`${styles[variant]} ${className}`.trim()} {...rest}>
-      {children}
-    </Component>
+  return React.createElement(
+    Component as keyof JSX.IntrinsicElements,
+    {
+      className: `${styles[variant]} ${className}`.trim(),
+      ...(rest as React.HTMLAttributes<HTMLElement>),
+    },
+    children
   );
 };
 
