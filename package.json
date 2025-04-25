@@ -5,7 +5,8 @@
     "packages/tokens",
     "packages/components",
     "packages/docs",
-    "apps/docs"
+    "apps/docs",
+    "packages/typescript-config"
   ],
   "scripts": {
     "build": "turbo run build",
