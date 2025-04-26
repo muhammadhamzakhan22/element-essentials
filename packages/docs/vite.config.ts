@@ -4,6 +4,14 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    fs: {
+      allow: [
+        path.resolve(__dirname, '../packages/components'),
+        path.resolve(__dirname, '../packages/tokens'),
+      ],
+    },
+  },
   plugins: [react()],
   css: {
     preprocessorOptions: {
@@ -20,6 +28,10 @@ export default defineConfig({
   // Ensure the CSS is available for Storybook
   resolve: {
     alias: {
+      '@element-essentials-component-styles.css': path.resolve(
+        __dirname,
+        '../components/src/styles.css'
+      ),
       '@element-essentials/components': path.resolve(
         __dirname,
         '../packages/components/src'

@@ -23,6 +23,10 @@ const config: StorybookConfig = {
       ...config.resolve,
       alias: {
         '@element-essentials/tokens': '@element-essentials/tokens/dist/tokens',
+        '@element-essentials-component-styles': require('path').resolve(
+          __dirname,
+          '../../../components/src/styles.css'
+        ),
       },
     };
     config.optimizeDeps = config.optimizeDeps || {};

@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@element-essentials/ui/*": ["packages/ui/src/*"]
+      "@element-essentials/ui/*": ["packages/ui/src/*"],
+      "@element-essentials/components/*": ["packages/components/src/*"],
+      "@element-essentials/tokens/*": ["packages/tokens/src/*"]
     },
     "target": "es2018",
     "lib": ["dom", "es2018", "es2019", "es2020"],

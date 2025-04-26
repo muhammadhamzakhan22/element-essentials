@@ -18,20 +18,82 @@ interface ColorPalette {
   success: string;
 }
 
-const colors: ColorPalette = {
-  primary: '#a3e635', // lime-400 (text, accent, border)
-  secondary: '#365314', // lime-950 (background)
-  accent: '#a3e635', // lime-400
-  background: '#365314', // lime-950 (button background)
-  surface: '#3f6212', // lime-900 (hover background)
-  text: {
-    primary: '#a3e635', // lime-400
-    secondary: '#365314', // lime-950
-    disabled: '#3f6212', // lime-900
-  },
-  error: '#eb9486', // error (unchanged)
-  success: '#a3e635', // lime-400
+interface Theme {
+  name: string;
+  colors: ColorPalette;
+}
+
+// Base color palette including all colors from the screenshot
+const baseColors = {
+  orange1: '#FA9F1C',
+  orange2: '#F58D19',
+  orange3: '#E47513',
+  orange4: '#D0630E',
+  orange5: '#BB5008',
+  brown1: '#A54708',
+  brown2: '#833907',
+  brown3: '#612B05',
+  brown4: '#391A04',
+  brown5: '#231205',
 };
+
+// Define themes
+const lightTheme: Theme = {
+  name: 'light',
+  colors: {
+    primary: baseColors.orange1, // FA9F1C
+    secondary: baseColors.brown1, // A54708
+    accent: baseColors.orange1, // FA9F1C
+    background: baseColors.brown1, // A54708
+    surface: baseColors.brown2, // 833907
+    text: {
+      primary: baseColors.orange1, // FA9F1C
+      secondary: baseColors.brown1, // A54708
+      disabled: baseColors.brown2, // 833907
+    },
+    error: '#eb9486', // unchanged
+    success: baseColors.orange1, // FA9F1C
+  },
+};
+
+const mediumTheme: Theme = {
+  name: 'medium',
+  colors: {
+    primary: baseColors.orange3, // E47513
+    secondary: baseColors.brown3, // 612B05
+    accent: baseColors.orange3, // E47513
+    background: baseColors.brown3, // 612B05
+    surface: baseColors.brown4, // 391A04
+    text: {
+      primary: baseColors.orange3, // E47513
+      secondary: baseColors.brown3, // 612B05
+      disabled: baseColors.brown4, // 391A04
+    },
+    error: '#eb9486', // unchanged
+    success: baseColors.orange3, // E47513
+  },
+};
+
+const darkTheme: Theme = {
+  name: 'dark',
+  colors: {
+    primary: baseColors.orange5, // BB5008
+    secondary: baseColors.brown5, // 231205
+    accent: baseColors.orange5, // BB5008
+    background: baseColors.brown5, // 231205
+    surface: baseColors.brown4, // 391A04
+    text: {
+      primary: baseColors.orange5, // BB5008
+      secondary: baseColors.brown5, // 231205
+      disabled: baseColors.brown4, // 391A04
+    },
+    error: '#eb9486', // unchanged
+    success: baseColors.orange5, // BB5008
+  },
+};
+
+// Default theme (using light theme as default)
+const colors: ColorPalette = lightTheme.colors;
 
 // === Typography ===
 interface FontWeight {
@@ -105,6 +167,7 @@ const spacing: Spacing = {
   '2xl': '3rem', // 48px
 };
 
+// Style Dictionary-compatible tokens for the default theme
 const tokens = {
   color: {
     brand: {
@@ -124,6 +187,18 @@ const tokens = {
     status: {
       error: { value: colors.error },
       success: { value: colors.success },
+    },
+    palette: {
+      orange1: { value: baseColors.orange1 },
+      orange2: { value: baseColors.orange2 },
+      orange3: { value: baseColors.orange3 },
+      orange4: { value: baseColors.orange4 },
+      orange5: { value: baseColors.orange5 },
+      brown1: { value: baseColors.brown1 },
+      brown2: { value: baseColors.brown2 },
+      brown3: { value: baseColors.brown3 },
+      brown4: { value: baseColors.brown4 },
+      brown5: { value: baseColors.brown5 },
     },
   },
   typography: {
@@ -207,10 +282,10 @@ const buttonSizeTokens = {
 
 // === Exports ===
 // Export individual token sets for use in components
-export { colors, typography, spacing, buttonSizes };
+export { colors, typography, spacing, buttonSizes, baseColors, lightTheme, mediumTheme, darkTheme };
 
 // Export types for type-safe usage
-export type { ColorPalette, Typography, Spacing };
+export type { ColorPalette, Typography, Spacing, Theme };
 
 // Export Style Dictionary tokens for processing
 export default {
