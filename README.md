@@ -1,127 +1,147 @@
-# Element Essentials
+# Element Essentials 🎨
 
-**A lightweight, accessible component library providing essential UI building blocks for modern web applications.**
+![GitHub release](https://img.shields.io/github/release/muhammadhamzakhan22/element-essentials.svg?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/muhammadhamzakhan22/element-essentials.svg?style=flat-square) ![GitHub stars](https://img.shields.io/github/stars/muhammadhamzakhan22/element-essentials.svg?style=social)
 
----
+Welcome to **Element Essentials**, a lightweight and accessible component library that provides essential UI building blocks for modern web applications. Whether you are developing a new project or enhancing an existing one, Element Essentials has the tools you need to create beautiful and functional interfaces.
 
-## Overview
+## Table of Contents
 
-Element Essentials is a modern, accessible React component library designed to help you build beautiful, consistent, and user-friendly interfaces with ease. It provides a set of essential UI components, tokens, and documentation for rapid web application development.
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
----
+## Features
 
-## Tech Stack
-
-- **React 19**
-- **TypeScript**
-- **Vite** (for docs dev/build)
-- **Storybook** (for interactive component documentation)
-- **pnpm** (monorepo/workspaces)
-- **Turborepo** (monorepo build orchestration and caching)
-- **ESLint & Prettier** (code quality)
-
-### Monorepo Management with Turborepo
-
-This project uses [Turborepo](https://turbo.build/) to efficiently manage builds, caching, and task orchestration across multiple packages. Turborepo helps speed up development and CI by running only the necessary tasks and sharing cache artifacts between machines.
-
-**Common Turborepo commands:**
-
-```sh
-pnpm turbo run build      # Build all packages
-pnpm turbo run dev        # Start dev servers for all packages
-pnpm turbo run lint       # Lint all packages
-```
-
-Learn more in the [Turborepo docs](https://turbo.build/repo/docs).
-
----
-
-## Project Structure
-
-```
-/element-essentials
-├── packages
-│   ├── components   # React component library source code
-│   ├── tokens       # Design tokens (colors, typography, spacing, etc.)
-│   └── docs         # Documentation site (Vite + Storybook)
-└── ...              # Configs, CI, etc.
-```
-
-- **components**: All reusable UI components live here.
-- **tokens**: Centralized design tokens for consistency.
-- **docs**: Storybook-powered documentation and usage guides.
-
----
+- **Lightweight**: Designed for speed and efficiency.
+- **Accessible**: Built with accessibility in mind, ensuring all users can interact with your application.
+- **Responsive**: Works seamlessly on various devices and screen sizes.
+- **Customizable**: Easily modify components to fit your design needs.
+- **Integrated with Modern Tools**: Built with React, TypeScript, and optimized for Vercel deployment.
 
 ## Getting Started
 
-### Install dependencies
+To start using Element Essentials, you need to install it in your project. Follow the installation guide below to set everything up.
 
-```sh
-pnpm install
+## Installation
+
+You can install Element Essentials using [pnpm](https://pnpm.io/). Run the following command in your terminal:
+
+```bash
+pnpm add element-essentials
 ```
 
-### Develop
+If you prefer npm or yarn, you can also use:
 
-Start the docs site and Storybook in development mode:
-
-```sh
-cd packages/docs
-pnpm dev         # Starts Vite dev server for docs
-pnpm storybook   # Starts Storybook for live component preview
+```bash
+npm install element-essentials
 ```
 
-### Build
+or
 
-Build the component library and docs:
-
-```sh
-pnpm build       # Build all packages
-cd packages/docs
-pnpm build-storybook   # Build static Storybook docs
+```bash
+yarn add element-essentials
 ```
 
-### View Storybook
+## Usage
 
-After building, open `packages/docs/storybook-static/index.html` in your browser or deploy to a static host (e.g., Vercel).
+After installing, you can import the components you need into your React application. Here’s a simple example:
 
----
+```javascript
+import { Button } from 'element-essentials';
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to Element Essentials</h1>
+      <Button label="Click Me" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+This example demonstrates how to import and use a Button component from the library.
+
+## Components
+
+Element Essentials includes a variety of components to help you build your UI. Here are some of the key components:
+
+### Button
+
+A customizable button component that can handle various actions.
+
+```javascript
+<Button label="Submit" onClick={handleSubmit} />
+```
+
+### Card
+
+A simple card component to display content in a structured way.
+
+```javascript
+<Card title="Card Title" content="This is some content inside the card." />
+```
+
+### Modal
+
+A modal component for displaying information in a focused manner.
+
+```javascript
+<Modal isOpen={isOpen} onClose={handleClose}>
+  <h2>Modal Title</h2>
+  <p>This is the modal content.</p>
+</Modal>
+```
+
+### Input
+
+A styled input component for capturing user input.
+
+```javascript
+<Input placeholder="Enter your name" />
+```
+
+### Dropdown
+
+A dropdown component for selecting options.
+
+```javascript
+<Dropdown options={['Option 1', 'Option 2']} onSelect={handleSelect} />
+```
+
+## Documentation
+
+For detailed documentation on each component, including props, examples, and customization options, please visit our [documentation site](https://github.com/muhammadhamzakhan22/element-essentials/releases).
 
 ## Contributing
 
-- Please open issues or pull requests for bugs, features, or improvements.
-- Follow the coding standards enforced by ESLint and Prettier.
+We welcome contributions from the community. If you would like to contribute, please follow these steps:
 
----
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your branch to your fork.
+5. Create a pull request.
+
+Please ensure that your code follows the existing style and includes appropriate tests.
 
 ## License
 
-MIT
+Element Essentials is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Releases
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+To view the latest releases, visit our [Releases section](https://github.com/muhammadhamzakhan22/element-essentials/releases). You can download the latest version and execute it in your project.
 
-```
-cd my-turborepo
-npx turbo login
-```
+Feel free to check the releases for updates and new features as we continue to improve Element Essentials.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turborepo.com/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+Thank you for checking out Element Essentials! We hope it helps you build amazing web applications with ease. If you have any questions or need assistance, please feel free to open an issue in the repository.
